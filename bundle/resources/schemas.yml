@@ -1,0 +1,6 @@
+resources:
+  schemas:
+    bundle_schema:
+      name: ${var.UC_SCHEMA_PREFIX}turbine
+      catalog_name: etl_project
+      comment: schema

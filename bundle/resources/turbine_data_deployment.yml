@@ -1,0 +1,25 @@
+resources:
+  jobs:
+    turbine_data_workflow:
+      name: turbine_data_workflow_${bundle.target}
+
+      webhook_notifications:
+        on_failure:
+        
+      notification_settings:
+        no_alert_for_skipped_runs: true
+        no_alert_for_canceled_runs: true
+
+      permissions:
+        - group_name: ${var.contributor_group}
+          level: CAN_MANAGE_RUN
+
+      schedule:
+        quartz_cron_expression: 12 10 10 * * ?
+        timezone_id: UTC
+        pause_status: ${var.schedule_status}
+
+      tasks:
+        - task_key: run_turbine_data_pipeline_task
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.turbine_data_dlt_pipeline.id}
