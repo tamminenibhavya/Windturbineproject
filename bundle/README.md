@@ -6,7 +6,8 @@ The Wind Turbine Project is designed using Databricks Asset Bundles to deploy al
 
 The layers are structured as follows:
 
-- **Bronze Layer**: Ingests raw files into the bronze layer using Databricks Auto Loader for seamless incremental data processing. Auto Loader is leveraged for its ability to handle large-scale data ingestion with minimal latency, ensuring that the pipeline can process data of any size efficiently.
+- **Bronze Layer**: Ingests raw files into the bronze layer using Databricks Auto Loader for seamless incremental data processing. Auto Loader is leveraged for its ability to handle large-scale data ingestion with minimal latency, ensuring that the pipeline can process data of any size efficiently. Once the given CSV files are loaded to volumes,they
+were easily been processed and more can be appended in future and the pipeline processed them incrementally at scale.
 
 - **Silver Layer**: Applies data cleansing and transformation, including:
     1. Removing duplicate rows.
@@ -22,6 +23,17 @@ The layers are structured as follows:
 
 The project is orchestrated using a DLT (Delta Live Tables) pipeline, which simplifies the workflow and ensures scalability with serverless execution. DLT's declarative approach to defining data transformations and its built-in monitoring capabilities make it an ideal choice for building robust and maintainable data pipelines.
 
+## End-to-End DLT Pipeline Flow
+
+The Wind Turbine Project includes an end-to-end Delta Live Tables (DLT) pipeline that orchestrates the entire ETL process. The following images provide a comprehensive view of the pipeline:
+
+- **DLT Pipeline Flow**: Visual representation of the DLT pipeline execution.
+    ![DLT Pipeline Flow](images/turbine_dlt_pipeline_run.jpg)
+
+- **Unity Catalog Tables**: Overview of the tables managed in Unity Catalog.
+    ![Unity Catalog Tables](images/tables.jpg)
+
+These images illustrate the seamless integration of the ETL pipeline with Unity Catalog, ensuring efficient data processing and governance.
 ## Data Quality
 
 Ensuring data quality is a critical aspect of the Wind Turbine Project. The following images illustrate the data quality checks performed at each layer of the ETL pipeline:
