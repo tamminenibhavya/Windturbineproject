@@ -6,7 +6,7 @@ resources:
       configuration:
         catalog_name: "${var.ENV_CATALOG_IDENTIFIER}_etl_project"
         schema_name: "${var.ENV_SCHEMA_PREFIX}turbine"
-        volume_name: "${var.ENV_VOLUME_PREFIX}turbine_data_volume"
+        volume_name: "turbine_data_volume"
         workspace_root_path: "${workspace.root_path}/"
       libraries:
         - notebook:

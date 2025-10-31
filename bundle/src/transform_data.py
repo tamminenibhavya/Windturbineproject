@@ -21,7 +21,7 @@ def create_turbine_cleansed_data_silver(spark):
         )
     @dlt.expect_all_or_drop(valid_cleansed_data)
     def turbine_data_silver():
-        df = dlt.read("raw_turbine_data")
+        df = dlt.read("turbine_data_bronze")
         return cleanse_data(df)
     
 
