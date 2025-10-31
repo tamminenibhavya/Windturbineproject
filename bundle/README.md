@@ -27,13 +27,13 @@ The project is orchestrated using a DLT (Delta Live Tables) pipeline, which simp
 Ensuring data quality is a critical aspect of the Wind Turbine Project. The following images illustrate the data quality checks performed at each layer of the ETL pipeline:
 
 - **Bronze Layer**: Initial data ingestion quality checks.
-    ![Bronze Layer Data Quality](images/bronze_quality.png)
+    ![Bronze Layer Data Quality](images/bronze_quality.jpg)
 
 - **Silver Layer**: Data cleansing and transformation quality checks.
-    ![Silver Layer Data Quality](images/silver_quality.png)
+    ![Silver Layer Data Quality](images/silver_quality.jpg)
 
 - **Gold Layer**: Final data quality checks and anomaly detection.
-    ![Gold Layer Data Quality](images/gold_quality.png)
+    ![Gold Layer Data Quality](images/gold_quality.jpg)
 
 These visualizations provide insights into the data quality at each stage, ensuring that the pipeline maintains high standards of data integrity and reliability.
 ## Utilities and Testing
