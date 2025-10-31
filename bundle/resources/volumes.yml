@@ -1,7 +1,7 @@
 resources:
   volumes:
     inbound_data_volume:
-      name: ${var.UC_VOLUME_PREFIX}inbound_data_volume
-      schema_name: ${var.UC_SCHEMA_PREFIX}turbine
-      catalog_name: etl_project
+      name: inbound_files
+      schema_name: "${var.ENV_SCHEMA_PREFIX}turbine"
+      catalog_name: "${var.ENV_CATALOG_IDENTIFIER}_etl_project"
       comment: Volume for inbound data
