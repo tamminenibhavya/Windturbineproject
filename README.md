@@ -26,8 +26,7 @@ windturbineproject/
 
 ## Medallion Architecture
 
-- **Bronze Layer**: Ingests raw files into the bronze layer using Databricks Auto Loader for seamless incremental data processing. Auto Loader is leveraged for its ability to handle large-scale data ingestion with minimal latency, ensuring that the pipeline can process data of any size efficiently. Once the given CSV files are loaded to volumes,they
-were easily been processed and more can be appended in future and the pipeline processed them incrementally at scale.
+- **Bronze Layer**: Ingests raw files into the bronze layer using Databricks Auto Loader for seamless incremental data processing. Once the given CSV files are loaded to volumes,they were easily been processed and more can be appended in future and the pipeline processed them incrementally at scale.
 
 - **Silver Layer**: Applies data cleansing and transformation, including:
     1. Removing duplicate rows.

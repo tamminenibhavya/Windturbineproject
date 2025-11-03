@@ -18,7 +18,7 @@ targets:
         schedule_status: 
         ENV_CATALOG_IDENTIFIER: dev
         ENV_SCHEMA_PREFIX: "dev_${workspace.current_user.short_name}_"
-        contributing_group: DEVS
+        contributing_group: DEV_GRP
     permissions:
       - user_name: ${workspace.current_user.userName}
         level: CAN_MANAGE
@@ -34,8 +34,8 @@ targets:
         spark_version: 15.4.x-scala2.12
         schedule_status: 
         ENV_CATALOG_IDENTIFIER: prod
-        ENV_SCHEMA_PREFIX: "prod_"
-        contributing_group: DEVS
+        ENV_SCHEMA_PREFIX: ""
+        contributing_group: PROD_GRP
     permissions:
       - user_name: ${workspace.current_user.userName}
         level: CAN_MANAGE

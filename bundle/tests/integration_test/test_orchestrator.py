@@ -1,4 +1,3 @@
-import pytest
 from unittest.mock import patch
 from pyspark.sql import SparkSession
 from extract_data import extract_turbine_data
