@@ -76,6 +76,18 @@ These visualizations provide insights into the data quality at each stage, ensur
 
 By incorporating both unit and integration tests, the project ensures high code quality and robust functionality across all layers of the pipeline.
 
+## Logging
+
+The Wind Turbine Project incorporates robust logging mechanisms to ensure that errors and informational messages are captured effectively during the ETL process. The `logging` module is used to log messages at various levels, such as `INFO` and `ERROR`. For example:
+- **Error Logging**: Captures errors during data extraction or transformation, providing detailed information for debugging:
+    ```python
+    logging.error(f"Error during data extraction: {e}")
+    ```
+- **Informational Logging**: Logs key events and milestones in the pipeline execution to monitor progress:
+    ```python
+    logging.info("Data extraction completed successfully.")
+    ```
+
 ## Key Features
 
 - **Auto Loader**: Enables smooth processing of incremental data, automatically detecting new files and ingesting them with minimal configuration. This ensures the pipeline can handle continuous data streams without manual intervention.
