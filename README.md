@@ -5,7 +5,6 @@ Wind Turbine Project Overview
 The Wind Turbine Project is designed using Databricks Asset Bundles to deploy all workspace resources efficiently. The project follows an ETL (Extract-Transform-Load) folder structure, encompassing the code for each layer performing its respective tasks. 
 
 ```
-```
 windturbineproject/
 ├── bundle/
 │   ├── src/
@@ -24,7 +23,6 @@ windturbineproject/
 │   │   └── turbine_data_dlt_pipeline.yml
 │   ├── databricks.yml
 ├── README.md
-```
 ```
 
 ## Medallion Architecture
