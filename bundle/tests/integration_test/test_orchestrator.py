@@ -5,11 +5,10 @@ from extract_data import extract_turbine_data
 from transform_data import create_turbine_cleansed_data_silver, create_turbine_data_gold
 from load_data import load_to_gold
 
-
 # Integration Test
 def test_pipeline_integration():
-    # Mock SparkSession
 
+    # Mock SparkSession
     with patch.object(SparkSession, 'builder') as mock_builder:
         mock_spark = mock_builder.getOrCreate.return_value
 
@@ -24,7 +23,6 @@ def test_pipeline_integration():
         volume_path = f"/Volumes/test_catalog/test_schema/test_volume/"
 
         # Mock functions
-
         with patch('extract_data.extract_turbine_data') as mock_extract, \
              patch('transform_data.create_turbine_cleansed_data_silver') as mock_transform_silver, \
              patch('transform_data.create_turbine_data_gold') as mock_transform_gold, \
@@ -42,5 +40,4 @@ def test_pipeline_integration():
             mock_transform_gold.assert_called_once_with(mock_spark)
             mock_load.assert_called_once_with(mock_spark)
 
-# Call the test function
-test_pipeline_integration()
+# The test function will be discovered by pytest

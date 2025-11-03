@@ -1,10 +1,33 @@
 # Windturbineproject
 Wind Turbine Project Overview
 
-## Project Structure
+## Project Directory Structure
 The Wind Turbine Project is designed using Databricks Asset Bundles to deploy all workspace resources efficiently. The project follows an ETL (Extract-Transform-Load) folder structure, encompassing the code for each layer performing its respective tasks. 
 
-The layers are structured as follows:
+```
+```
+windturbineproject/
+├── bundle/
+│   ├── src/
+│   │   ├── extract_data.py
+│   │   ├── transform_data.py
+│   │   └── load_data.py
+│   ├── tests/
+│   │   ├── unit_tests/
+│   │   │   └── test_utils.py
+│   │   ├── integration_tests/
+│   │   │   └── test_orchestrator.py
+│   ├── resources/
+│   │   ├── schemas.yml
+│   │   ├── volumes.yml
+│   │   ├── turbine_data_deployment.yml
+│   │   └── turbine_data_dlt_pipeline.yml
+│   ├── databricks.yml
+├── README.md
+```
+```
+
+## Medallion Architecture
 
 - **Bronze Layer**: Ingests raw files into the bronze layer using Databricks Auto Loader for seamless incremental data processing. Auto Loader is leveraged for its ability to handle large-scale data ingestion with minimal latency, ensuring that the pipeline can process data of any size efficiently. Once the given CSV files are loaded to volumes,they
 were easily been processed and more can be appended in future and the pipeline processed them incrementally at scale.
@@ -28,31 +51,34 @@ The project is orchestrated using a DLT (Delta Live Tables) pipeline, which simp
 The Wind Turbine Project includes an end-to-end Delta Live Tables (DLT) pipeline that orchestrates the entire ETL process. The following images provide a comprehensive view of the pipeline:
 
 - **DLT Pipeline Flow**: Visual representation of the DLT pipeline execution.
-    ![DLT Pipeline Flow](images/turbine_dlt_pipeline_run.jpg)
+    ![DLT Pipeline Flow](bundle/images/turbine_dlt_pipeline_run.jpg)
 
 - **Unity Catalog Tables**: Overview of the tables managed in Unity Catalog.
-    ![Unity Catalog Tables](images/tables.jpg)
+    ![Unity Catalog Tables](bundle/images/tables.jpg)
 
-These images illustrate the seamless integration of the ETL pipeline with Unity Catalog, ensuring efficient data processing and governance.
+
 ## Data Quality
 
 Ensuring data quality is a critical aspect of the Wind Turbine Project. The following images illustrate the data quality checks performed at each layer of the ETL pipeline:
 
 - **Bronze Layer**: Initial data ingestion quality checks.
-    ![Bronze Layer Data Quality](images/bronze_quality.jpg)
+    ![Bronze Layer Data Quality](bundle/images/bronze_quality.jpg)
 
 - **Silver Layer**: Data cleansing and transformation quality checks.
-    ![Silver Layer Data Quality](images/silver_quality.jpg)
+    ![Silver Layer Data Quality](bundle/images/silver_quality.jpg)
 
 - **Gold Layer**: Final data quality checks and anomaly detection.
-    ![Gold Layer Data Quality](images/gold_quality.jpg)
+    ![Gold Layer Data Quality](bundle/images/gold_quality.jpg)
 
 These visualizations provide insights into the data quality at each stage, ensuring that the pipeline maintains high standards of data integrity and reliability.
+
 ## Utilities and Testing
 
 - **Utils**: Contains all the cleansing and transformation logic, making the code modular and reusable.
-- **Unit Tests**: Validate each individual component of the Utils module.
-- **Integration Tests**: Test the orchestrator file by mocking functions to ensure end-to-end functionality.
+- **Unit Tests**: Validate each individual component of the Utils module. Located in the `tests/unit_tests` directory, they ensure that the cleansing and transformation logic in the `Utils` module works as expected.
+- **Integration Tests**: Test the orchestrator file by mocking functions to ensure end-to-end functionality. Located in the `tests/integration_test` directory, the orchestrator file is tested by mocking dependencies to simulate the entire workflow, ensuring seamless integration between components.
+
+By incorporating both unit and integration tests, the project ensures high code quality and robust functionality across all layers of the pipeline.
 
 ## Key Features
 
@@ -65,7 +91,7 @@ These visualizations provide insights into the data quality at each stage, ensur
 - The project is designed to work in both development and production workspaces.
 - Requires Unity Catalog for table management.
 - Uses serverless clusters to run the DLT pipeline.
-- Files are uploaded to a Databricks Volume.
+- Tubine Data CSV Files are uploaded to a Databricks Volume.
 - Tables are managed within Unity Catalog.
 
 This project structure and workflow ensure a robust, scalable, and maintainable data pipeline for processing wind turbine data. By leveraging Auto Loader for efficient data ingestion and DLT for scalable and reliable data processing, the solution is designed to handle data of any size while maintaining data quality and integrity.

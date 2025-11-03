@@ -15,5 +15,5 @@ resources:
       photon: true
       serverless: true
       permissions:
-        - group_name: ${var.contributor_group}
+        - group_name: ${var.contributing_group}
           level: CAN_MANAGE

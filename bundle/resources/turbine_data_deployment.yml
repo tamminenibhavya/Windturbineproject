@@ -11,7 +11,7 @@ resources:
         no_alert_for_canceled_runs: true
 
       permissions:
-        - group_name: ${var.contributor_group}
+        - group_name: ${var.contributing_group}
           level: CAN_MANAGE_RUN
 
       schedule:
